@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@mixin button() {
+  height: 3em;
+  width: 8em;
+  border: none;
+  border-radius: 10em;
+  background: #016dd9;
+  font-size: 17px;
+  color: #ffffff;
+  font-family: inherit;
+  font-weight: 500;
+}
+@mixin flex() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box {
+  @include flex();
+  flex-direction: column;
+  gap: 10px;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 20px;
+  form {
+    @include flex();
+    flex-direction: column;
+    gap: 10px;
+    input {
+      width: 100%;
+    }
+    .submit {
+      @include button();
+    }
+  }
+}
+body {
+  @include flex();
+  height: 100vh;
+}
+.container {
+  background-color: rgba(128, 128, 128, 0.376);
+  filter: blur(10px);
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+@media only screen and (max-width: 425px) {
+  form {
+    h1 {
+      font-size: 16px;
+    }
+  }
+  .box{
+    width: 70%;
+  }
+  h3 {
+    font-size: 16px;
+  }
+}
